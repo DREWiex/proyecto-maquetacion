@@ -22,28 +22,36 @@ body{
 
 
 .header{
+    display: flex;
     position: fixed;
     width: 100%;
     height: 70px;
     top: 0;
     left: 0;
+    margin: 0 auto;
     background-color: var(--dark);
 }
 
 .nav{
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    margin: 0 auto;
+    width: 100%;
 }
 
 a{
     text-decoration: none;
 }
 
+a:hover{
+    color: var(--white);
+    background-color: var(--dark);
+    transition: 0.5s;
+}
+
 .logo{
     font-size: 1.3rem;
     font-weight: 300;
-    line-height: 70px;
     text-transform: uppercase;
     margin-left: 50px;
     color: var(--white);
@@ -53,8 +61,7 @@ a{
     font-size: 2rem;
     background: none;
     border: none;
-    padding: 0 20px;
-    margin: 0 30px;
+    margin-right: 50px;
     cursor: pointer;
     color: var(--white);
 }
@@ -68,7 +75,6 @@ a{
     top: 70px;
     width: 100%;
     list-style: none;
-    margin-right: 40px;
 
     height: calc(100% - 70px);  /* calcula la altura total restándole el height del header */
     overflow-y: auto; /* aparece el scroll en caso de ser necesario */
@@ -95,6 +101,38 @@ a{
 
 
 @media screen and (min-width:992px) {
+
+    .header{
+        height: 90px;
+    }
+
+    .nav-toggle{
+        display: none;
+    }
+
+    a:hover{
+        color: var(--light);
+        background-color: none;
+        transition: 0.3s;
+    }
+
+    .nav-menu{
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        align-items: center;
+        position: relative;
+        top: 0;
+        height: 100%;
+        overflow-y: auto;
+        left: 0;
+        transition: none; /* none sería el valor por defecto */
+    }
+
+    .nav-menu-link{
+        padding-right: 50px;
+        color: var(--white);
+    }
 
 } /*992px end*/
 
